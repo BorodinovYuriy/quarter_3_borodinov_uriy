@@ -13,11 +13,11 @@ public class MainClass {
         intArr[4]=5;
 
         String[] strArr = new String[5];
-        strArr[0]=("Один");
-        strArr[1]=("Два");
-        strArr[2]=("Три");
-        strArr[3]=("Четыре");
-        strArr[4]=("Пять");
+        strArr[0]=("РћРґРёРЅ");
+        strArr[1]=("Р”РІР°");
+        strArr[2]=("РўСЂРё");
+        strArr[3]=("Р§РµС‚С‹СЂРµ");
+        strArr[4]=("РџСЏС‚СЊ");
 
         SwapTwoArrEl(intArr,0,2);
         SwapTwoArrEl(strArr,0,1);

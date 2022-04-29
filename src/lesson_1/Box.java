@@ -12,7 +12,6 @@ public class Box<T extends Fruit> {
         this.list = new ArrayList<>();
     }
     public Box(T... fruits) {
-        //преобразует в AL
         this.list = new ArrayList<>(Arrays.asList(fruits));
     }
 
@@ -29,7 +28,6 @@ public class Box<T extends Fruit> {
 
         return weight;
     }
-//пересыпание...
     public void moveToAnotherBox(Box<T> another) {
         another.list.addAll(list);
         list.clear();
@@ -38,11 +36,9 @@ public class Box<T extends Fruit> {
     public void add(T fruit) {
         list.add(fruit);
     }
-//перегрузка, для коллекции...
     public void add(Collection<T> fruit) {
         list.addAll(fruit);
     }
-//сравнивает коробки (любые) по весу (текущую и...)
     public boolean compare(Box<?> a) {
         return Math.abs(this.getWeight() - a.getWeight()) < 0.001;
     }
