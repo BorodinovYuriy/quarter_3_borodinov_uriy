@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="allApp" alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csbd.ClientController">
+   <MenuBar fx:id="menu" disable="true">
+     <menus>
+       <Menu mnemonicParsing="false" text="File">
+         <items>
+               <MenuItem mnemonicParsing="false" text="Load chat" />
+               <MenuItem fx:id="saveChat" mnemonicParsing="false" onAction="#saveToFile" text="Save chat" />
+               <MenuItem fx:id="modifiedUser" mnemonicParsing="false" onAction="#modifiedUser" text="Change Log/Pass/Nick" />
+               <MenuItem fx:id="deleteUser" mnemonicParsing="false" onAction="#deleteThisUser" text="Delete user" />
+           <MenuItem fx:id="closeConnection" mnemonicParsing="false" onAction="#disconnect" text="Close connection" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Edit">
+         <items>
+           <MenuItem fx:id="clearChat" mnemonicParsing="false" onAction="#clearTextArea" text="Clear chat" />
+               <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Help">
+         <items>
+           <MenuItem mnemonicParsing="false" text="About" />
+         </items>
+       </Menu>
+     </menus>
+   </MenuBar>
+   <VBox fx:id="topVBox" depthTest="DISABLE" fillWidth="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="100.0" prefWidth="300.0" VBox.vgrow="NEVER">
+      <children>
+         <Label text="Авторизация:" />
+         <TextField fx:id="logTF" promptText="login" />
+         <PasswordField fx:id="passPF" promptText="password" />
+         <Button fx:id="authB" mnemonicParsing="false" onAction="#auth" prefWidth="100.0" text="OK" />
+         <Button fx:id="addNewUser" mnemonicParsing="false" onAction="#addUser" prefWidth="100.0" text="Add new User" />
+      </children></VBox>
+   <VBox fx:id="addBox" managed="false" visible="false" VBox.vgrow="NEVER">
+      <children>
+         <TextField fx:id="newLog" maxWidth="150.0" promptText="Login" />
+         <TextField fx:id="newPass" layoutX="10.0" layoutY="10.0" maxWidth="150.0" promptText="Password" />
+         <TextField fx:id="newNick" layoutX="10.0" layoutY="36.0" maxWidth="150.0" promptText="Nickname" />
+         <Button fx:id="addButton" mnemonicParsing="false" onAction="#addUserFinish" prefWidth="100.0" text="Add" />
+         <Button fx:id="undoButton" mnemonicParsing="false" onAction="#setDeactive" prefWidth="100.0" text="Undo" />
+      </children>
+   </VBox>
+   <VBox fx:id="botVBox" prefHeight="283.0" prefWidth="448.0" VBox.vgrow="ALWAYS">
+      <children>
+         <HBox VBox.vgrow="ALWAYS">
+            <children>
+                <TextArea fx:id="textArea" editable="false" prefWidth="300.0" HBox.hgrow="ALWAYS" />
+               <ListView fx:id="listView" maxWidth="150.0" prefWidth="150.0" HBox.hgrow="ALWAYS" />
+            </children>
+         </HBox>
+          <HBox fx:id="botHBox" visible="false">
+              <TextField fx:id="textField" onKeyPressed="#keyListener" promptText="Input Text Message..." HBox.hgrow="ALWAYS" />
+              <Button fx:id="button" onAction="#sendMessage" onKeyPressed="#keyListener" text="Send" />
+          </HBox>
+      </children>
+   </VBox>
+</VBox>
