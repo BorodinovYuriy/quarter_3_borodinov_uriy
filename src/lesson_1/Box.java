@@ -39,6 +39,7 @@ public class Box<T extends Fruit> {
     public void add(Collection<T> fruit) {
         list.addAll(fruit);
     }
+
     public boolean compare(Box<?> a) {
         return Math.abs(this.getWeight() - a.getWeight()) < 0.001;
     }
